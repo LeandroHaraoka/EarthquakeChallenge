@@ -11,5 +11,9 @@
     <PackageReference Include="NSwag.AspNetCore" Version="13.13.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>

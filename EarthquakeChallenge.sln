@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthquakeChallenge.Presentation", "src\EarthquakeChallenge.Presentation\EarthquakeChallenge.Presentation.csproj", "{F14ED2F8-787A-49FE-9179-D68DCFB0F057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthquakeChallenge.Services", "src\EarthquakeChallenge.Services\EarthquakeChallenge.Services\EarthquakeChallenge.Services.csproj", "{D22FD8E7-729B-4A89-B487-B22E0731EE89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthquakeChallenge.Services", "src\EarthquakeChallenge.Services\EarthquakeChallenge.Services.csproj", "{D22FD8E7-729B-4A89-B487-B22E0731EE89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthquakeChallenge.Domain", "src\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain.csproj", "{70D1DEC8-78FA-4F5B-92E5-A36E3B3D0173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthquakeChallenge.Domain", "src\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain.csproj", "{70D1DEC8-78FA-4F5B-92E5-A36E3B3D0173}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
