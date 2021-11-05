@@ -1,0 +1,32 @@
+# DOTNET
+[Bb]in/
+[Dd]ebug/
+[Dd]ist/
+[Oo]bj/
+[Pp]ackages/
+[Pp]ublish/
+[Rr]elease/
+[Tt]est[Rr]esult*/
+x64/
+x86/
+
+# DOCKER
+
+# LOG
+*.log
+
+# NUGET
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# OTHER
+**/Properties/launchSettings.json
+*.sh
+*.py
+
+# TOOLS
+.vs/
+.vscode/
+.idea/
+*.user
