@@ -1,8 +1,8 @@
-﻿using EarthquakeChallenge.CrossCutting.Extensions;
-using EarthquakeChallenge.CrossCutting.ValueObjects;
+﻿using EarthquakeChallenge.Domain.Extensions;
+using EarthquakeChallenge.Domain.ValueObjects;
 using System;
 
-namespace EarthquakeChallenge.Domain.Earthquakes
+namespace EarthquakeChallenge.Domain.Entities
 {
     public class Earthquake
     {

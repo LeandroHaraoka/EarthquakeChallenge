@@ -1,18 +1,21 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Text.Json.Serialization;
 
-namespace EarthquakeChallenge.Services.Messages
+namespace EarthquakeChallenge.Application.Messages
 {
     public class EarthquakeGetRequest
     {
-        [JsonPropertyName("lat")]
+        [FromQuery(Name = "lat")]
         public double? Latitude { get; set; }
-        [JsonPropertyName("long")]
+
+        [FromQuery(Name = "long")]
         public double? Longitude { get; set; }
-        [JsonPropertyName("start_date")]
+
+        [FromQuery(Name = "start_date")]
         public DateTime? StartDate { get; set; }
-        [JsonPropertyName("end_date")]
+
+        [FromQuery(Name = "end_date")]
         public DateTime? EndDate { get; set; }
     }
 

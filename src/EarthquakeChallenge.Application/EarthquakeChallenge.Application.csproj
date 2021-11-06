@@ -6,11 +6,11 @@
 
   <ItemGroup>
 	<PackageReference Include="FluentValidation" Version="8.6.2" />
-	<PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+	<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EarthquakeChallenge.CrossCutting\EarthquakeChallenge.CrossCutting\EarthquakeChallenge.CrossCutting.csproj" />
     <ProjectReference Include="..\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain.csproj" />
   </ItemGroup>
 

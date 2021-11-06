@@ -1,7 +1,7 @@
-﻿using EarthquakeChallenge.CrossCutting.ValueObjects;
+﻿using EarthquakeChallenge.Domain.ValueObjects;
 using static System.Math;
 
-namespace EarthquakeChallenge.CrossCutting.Extensions
+namespace EarthquakeChallenge.Domain.Extensions
 {
     public static class MathExtensions
     {

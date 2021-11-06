@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EarthquakeChallenge.CrossCutting.ValueObjects
+namespace EarthquakeChallenge.Domain.ValueObjects
 {
     public readonly struct RadiansCoordinate
     {

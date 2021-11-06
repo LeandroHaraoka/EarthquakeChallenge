@@ -4,14 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EarthquakeChallenge.CrossCutting\EarthquakeChallenge.CrossCutting\EarthquakeChallenge.CrossCutting.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Earthquakes\Catalog\all_month.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

@@ -1,8 +1,9 @@
-﻿using EarthquakeChallenge.Domain.Earthquakes;
-using EarthquakeChallenge.Services.Handlers;
-using EarthquakeChallenge.Services.Messages;
+﻿using EarthquakeChallenge.Domain.Entities;
+using EarthquakeChallenge.Application.Handlers;
+using EarthquakeChallenge.Application.Messages;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EarthquakeChallenge.Controllers
@@ -11,14 +12,23 @@ namespace EarthquakeChallenge.Controllers
     [Route("[controller]")]
     public class EarthquakesController : ControllerBase
     {
-        public EarthquakesController() { }
+        private readonly IGetEarthquakesHandler _getEarthquakesHandler;
+
+        public EarthquakesController(IGetEarthquakesHandler getEarthquakesHandler)
+        {
+            _getEarthquakesHandler = getEarthquakesHandler;
+        }
 
         [HttpGet]
-        public async Task<IEnumerable<Earthquake>> Get([FromQuery] EarthquakeGetRequest request)
+        public async Task<ActionResult<IEnumerable<Earthquake>>> Get([FromQuery] EarthquakeGetRequest request)
         {
-            var earthquakes = new FindEarthquakesHandler();
-            var result = await earthquakes.Find(request);
-            return result;
+            var result = await _getEarthquakesHandler.Handle(request);
+
+            if (result is null) return UnprocessableEntity("Failed while retrieving information for thirdy-party API.");
+
+            if (result.Any() is false) return NotFound("No earthquakes were found for these parameters.");
+
+            return Ok(result);
         }
     }
 }
