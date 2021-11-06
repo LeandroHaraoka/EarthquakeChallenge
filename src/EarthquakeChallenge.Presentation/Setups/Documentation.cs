@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EarthquakeChallenge.Setups
 {
@@ -27,11 +23,11 @@ namespace EarthquakeChallenge.Setups
                 .UseOpenApi()
                 .UseReDoc((settings) =>
                 {
-                    settings.Path = configuration["Api:Routes:Documentation"];
+                    settings.Path = configuration["Api:Routes:Docs"];
                 })
                 .UseSwaggerUi3((settings) =>
                 {
-                    settings.Path = configuration["Api:Routes:Explorer"];
+                    settings.Path = configuration["Api:Routes:Swagger"];            
                     settings.OperationsSorter = "method";
                     settings.TagsSorter = "alpha";
                 });

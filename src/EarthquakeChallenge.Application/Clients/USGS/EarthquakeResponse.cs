@@ -37,7 +37,7 @@ namespace EarthquakeChallenge.Application.Clients.USGS
         }
     }
 
-        public class Geometry
+    public class Geometry
     {
         public double[] Coordinates { get; set; }
     }

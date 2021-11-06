@@ -24,7 +24,7 @@ namespace EarthquakeChallenge.Controllers
         {
             var result = await _getEarthquakesHandler.Handle(request);
 
-            if (result is null) return UnprocessableEntity("Failed while retrieving information for thirdy-party API.");
+            if (result is null) return UnprocessableEntity("Failed while retrieving information from thirdy-party API.");
 
             if (result.Any() is false) return NotFound("No earthquakes were found for these parameters.");
 
