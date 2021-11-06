@@ -1,22 +1,26 @@
-﻿using System;
+﻿using EarthquakeChallenge.CrossCutting.Extensions;
+using EarthquakeChallenge.CrossCutting.ValueObjects;
+using System;
 
 namespace EarthquakeChallenge.Domain.Earthquakes
 {
     public class Earthquake
     {
-        public DateTime Time { get; set; }
+        public DateTime Time { get; private set; }
 
-        public decimal Latitude { get; set; }
+        public double Latitude { get; private set; }
 
-        public decimal Longitude { get; set; }
+        public double Longitude { get; private set; }
 
-        public decimal Magnitude { get; set; }
+        public double Magnitude { get; private set; }
+
+        public double TravelDistance { get => Magnitude * 100; }
 
         public Earthquake()
         {
         }
 
-        public Earthquake(DateTime time, decimal latitude, decimal longitude, decimal magnitude)
+        public Earthquake(DateTime time, double latitude, double longitude, double magnitude)
         {
             Time = time;
             Latitude = latitude;
@@ -24,6 +28,7 @@ namespace EarthquakeChallenge.Domain.Earthquakes
             Magnitude = magnitude;
         }
 
-
+        public double DistanceFromCoordinate(RadiansCoordinate coordinate) =>
+           MathExtensions.GreatCircleDistance(new RadiansCoordinate(Latitude, Longitude), coordinate);
     }
 }

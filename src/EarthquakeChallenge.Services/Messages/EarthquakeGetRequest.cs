@@ -1,16 +1,18 @@
 ﻿using FluentValidation;
 using System;
+using System.Text.Json.Serialization;
 
-namespace EarthquakeChallenge.Messages
+namespace EarthquakeChallenge.Services.Messages
 {
     public class EarthquakeGetRequest
     {
-        public decimal? Latitude { get; set; }
-
-        public decimal? Longitude { get; set; }
-
+        [JsonPropertyName("lat")]
+        public double? Latitude { get; set; }
+        [JsonPropertyName("long")]
+        public double? Longitude { get; set; }
+        [JsonPropertyName("start_date")]
         public DateTime? StartDate { get; set; }
-
+        [JsonPropertyName("end_date")]
         public DateTime? EndDate { get; set; }
     }
 

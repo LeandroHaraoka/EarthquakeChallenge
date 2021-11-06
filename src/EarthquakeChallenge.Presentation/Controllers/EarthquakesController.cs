@@ -1,9 +1,8 @@
 ﻿using EarthquakeChallenge.Domain.Earthquakes;
-using EarthquakeChallenge.Domain.Earthquakes.Catalog;
-using EarthquakeChallenge.Messages;
+using EarthquakeChallenge.Services.Handlers;
+using EarthquakeChallenge.Services.Messages;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace EarthquakeChallenge.Controllers
@@ -15,10 +14,11 @@ namespace EarthquakeChallenge.Controllers
         public EarthquakesController() { }
 
         [HttpGet]
-        public async Task<IEnumerable<Earthquake>> Get([FromQuery] EarthquakeGetRequest earthquakeGetRequest)
+        public async Task<IEnumerable<Earthquake>> Get([FromQuery] EarthquakeGetRequest request)
         {
-            var x = await new EarthquakeCatalogReader().ReadFromCsvFile();
-            return Enumerable.Empty<Earthquake>();
+            var earthquakes = new FindEarthquakesHandler();
+            var result = await earthquakes.Find(request);
+            return result;
         }
     }
 }

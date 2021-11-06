@@ -1,11 +1,8 @@
-using EarthquakeChallenge.Messages;
+using EarthquakeChallenge.Services;
 using EarthquakeChallenge.Setups;
-using FluentValidation;
 using FluentValidation.AspNetCore;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,8 +27,7 @@ namespace EarthquakeChallenge
             services
                 .AddDocumentation()
                 .AddHttpClient()
-                .AddScoped<IValidator<EarthquakeGetRequest>, EarthquakeGetRequestValidator>()
-                .AddTransient<IValidatorInterceptor, DefaultValidatorInterceptor>();
+                .AddServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -50,31 +46,6 @@ namespace EarthquakeChallenge
             {
                 endpoints.MapControllers();
             });
-        }
-    }
-
-    public class DefaultValidatorInterceptor : IValidatorInterceptor
-    {
-        public ValidationContext BeforeMvcValidation(ControllerContext controllerContext, ValidationContext validationContext)
-        {
-            return validationContext;
-        }
-
-        public ValidationResult AfterMvcValidation(ControllerContext controllerContext, ValidationContext validationContext,
-            ValidationResult result)
-        {
-            if (!result.IsValid)
-            {
-                //var logEntry = new LogEntry()
-                //    .SetMessage("Request validation failed")
-                //    .SetSeverity(LogSeverity.Error)
-                //    .AddTags("validate-request")
-                //    .SetAdditionalData("Context", controllerContext.ActionDescriptor)
-                //    .SetAdditionalData("Errors", result.Errors);
-                //Logger.Log(logEntry);
-            }
-
-            return result;
         }
     }
 }

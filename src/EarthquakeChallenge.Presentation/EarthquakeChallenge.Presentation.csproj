@@ -5,14 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="FluentValidation" Version="8.6.2" />
-	<PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="NSwag.AspNetCore" Version="13.13.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EarthquakeChallenge.Domain\EarthquakeChallenge.Domain.csproj" />
+    <ProjectReference Include="..\EarthquakeChallenge.Services\EarthquakeChallenge.Services.csproj" />
   </ItemGroup>
 
 

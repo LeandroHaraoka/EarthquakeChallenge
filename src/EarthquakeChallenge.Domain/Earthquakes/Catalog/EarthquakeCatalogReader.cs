@@ -49,9 +49,9 @@ namespace EarthquakeChallenge.Domain.Earthquakes.Catalog
                 var splittedLine = catalogLine.Split(',');
 
                 var time = DateTime.Parse(splittedLine[0]);
-                var latitude = decimal.Parse(splittedLine[1]);
-                var longitude = decimal.Parse(splittedLine[2]);
-                var magnitude = decimal.Parse(splittedLine[4]);
+                var latitude = double.Parse(splittedLine[1]);
+                var longitude = double.Parse(splittedLine[2]);
+                var magnitude = double.Parse(splittedLine[4]);
 
                 earthquake = new Earthquake(
                         time: time, latitude: latitude, longitude: longitude, magnitude: magnitude);
