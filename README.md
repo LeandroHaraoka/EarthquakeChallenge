@@ -53,3 +53,5 @@ $  dotnet test <TEST_PROJECT_PATH> /p:CollectCoverage=true /p:CoverletOutputForm
 - Not for performance improvements, but for monitoring purpose we should add some logs with information related to errors (like exceptions), elapsed time, trace execution. In a professional project it's fundamental, we decided to omit in this challenge in order to keep it simple and because the implementation depends on the monitoring technology available.
 
 - The project architecture was made simple, in a real project it would contains some additional layers, for repositories, infrastructure, but we decided to avoid single file layers.
+
+- Unfortunately I won't have enough time to cover all code with unit test, but I wish it is enough to show how I organize them.
