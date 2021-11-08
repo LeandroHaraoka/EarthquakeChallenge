@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace EarthquakeChallenge.Application.Clients.USGS
+namespace EarthquakeChallenge.Application.Query
 {
     public interface IEarthquakesQuery
     {
@@ -25,7 +25,7 @@ namespace EarthquakeChallenge.Application.Clients.USGS
             _options = options.Value;
         }
 
-        public async Task<(bool, IEnumerable<Earthquake>)> Find(DateTime startDate, DateTime endDate)
+        public async Task<(bool Result, IEnumerable<Earthquake> Earthquakes)> Find(DateTime startDate, DateTime endDate)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace EarthquakeChallenge.Application.Clients.USGS
 
                 return (true, earthquakes);
             }
-            catch
+            catch 
             {
                 return (false, default);
             }

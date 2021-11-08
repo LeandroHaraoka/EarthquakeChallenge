@@ -17,6 +17,18 @@ namespace EarthquakeChallenge.Application.Messages
 
         [FromQuery(Name = "end_date")]
         public DateTime? EndDate { get; set; }
+        
+        public EarthquakeGetRequest()
+        {
+        }
+
+        public EarthquakeGetRequest(double? latitude, double? longitude, DateTime? startDate, DateTime? endDate)
+        {
+            Latitude = latitude;
+            Longitude = longitude;
+            StartDate = startDate;
+            EndDate = endDate;
+        }
     }
 
     public sealed class EarthquakeGetRequestValidator : AbstractValidator<EarthquakeGetRequest>

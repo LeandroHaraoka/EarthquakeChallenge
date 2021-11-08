@@ -1,4 +1,4 @@
-﻿using EarthquakeChallenge.Application.Clients.USGS;
+﻿using EarthquakeChallenge.Application.Query;
 using EarthquakeChallenge.Application.Messages;
 using EarthquakeChallenge.Domain.Entities;
 using EarthquakeChallenge.Domain.ValueObjects;

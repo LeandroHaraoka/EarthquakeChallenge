@@ -1,4 +1,4 @@
-﻿namespace EarthquakeChallenge.Application.Clients.USGS
+﻿namespace EarthquakeChallenge.Application.Query
 {
     public sealed class USGSOptions
     {

@@ -1,7 +1,7 @@
 ﻿using EarthquakeChallenge.Domain.Entities;
 using System;
 
-namespace EarthquakeChallenge.Application.Clients.USGS
+namespace EarthquakeChallenge.Application.Query
 {
     public class EarthquakeResponse
     {
